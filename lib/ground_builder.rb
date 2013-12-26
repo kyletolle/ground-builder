@@ -4,9 +4,9 @@ require_relative 'elements'
 require_relative 'map'
 
 class GroundBuilder
-  def initialize
-    @width = Ground::Sizes::X
-    @height = Ground::Sizes::Y
+  def initialize(width, height)
+    @width = width
+    @height = height
   end
 
   def map
@@ -16,5 +16,9 @@ end
 
 puts "THE MAP"
 puts "----------------"
-pp GroundBuilder.new.map
+
+width = Ground::Sizes::X
+height = Ground::Sizes::Y
+
+pp GroundBuilder.new(width, height).map
 
