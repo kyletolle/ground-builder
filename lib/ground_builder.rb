@@ -1,4 +1,5 @@
 require 'pp'
+require_relative 'ground'
 
 class Elements
   include Enumerable
@@ -20,14 +21,6 @@ class Elements
 
 private
   ELEMENTS = [ Water, Soil, Stone ]
-end
-
-
-module Ground
-  module Sizes
-    X = 2
-    Y = 2
-  end
 end
 
 class Point
