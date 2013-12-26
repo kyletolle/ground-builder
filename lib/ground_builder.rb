@@ -1,27 +1,6 @@
 require 'pp'
 require_relative 'ground'
-
-class Elements
-  include Enumerable
-
-  class Element; end
-  class Water < Element; end
-  class Soil < Element; end
-  class Stone < Element; end
-
-  def self.each(&block)
-    ELEMENTS.each do |element|
-      if block_given?
-        block.call element
-      else
-        yield element
-      end
-    end
-  end
-
-private
-  ELEMENTS = [ Water, Soil, Stone ]
-end
+require_relative 'elements'
 
 class Point
   attr_reader :affinities
