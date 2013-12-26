@@ -28,7 +28,6 @@ module Ground
     X = 2
     Y = 2
   end
-
 end
 
 class Point
@@ -36,6 +35,12 @@ class Point
 
   def initialize
     @affinities = Affinities.new
+  end
+
+  def to_s
+    @affinities.map do |key, affinity|
+      affinity.to_s
+    end.join(";")
   end
 end
 
@@ -46,7 +51,7 @@ class Affinities
     @hash ||= Affinities::Generator.new.generate
   end
 
-  def self.each(&block)
+  def each(&block)
     @hash.each do |affinity|
       if block_given?
         block.call affinity
@@ -88,27 +93,67 @@ class Affinity
     @element = element
     @weight = weight
   end
+
+  def to_s
+    "#{@element}: #{@weight}"
+  end
 end
 
-class GroundBuilder
-  def initialize
-    @x = Ground::Sizes::X
-    @y = Ground::Sizes::Y
+class Map
+  def initialize(width, height)
+    @width = width
+    @height = height
+
+    generate
   end
 
-  def map
-    @map ||= [].tap do |array|
-      @x.times do
-        array << [].tap do |row|
-          @y.times do
-            row << Point.new
-          end
+  def generate
+    @array ||= [].tap do |a|
+      @height.times do
+        a << Row.new(@width).generate
+      end
+    end
+  end
+
+  class Row
+    def initialize(width)
+      @width = width
+    end
+
+    def generate
+      @column ||= Column.new(@width).generate
+    end
+  end
+
+  class Column
+    def initialize(width)
+      @width = width
+
+      generate
+    end
+
+    def generate
+      @array ||= [].tap do |a|
+        @width.times do
+          a << Point.new
         end
       end
     end
   end
 end
 
+class GroundBuilder
+  def initialize
+    @width = Ground::Sizes::X
+    @height = Ground::Sizes::Y
+  end
+
+  def map
+    @map ||= Map.new(@width, @height)
+  end
+end
+
 puts "THE MAP"
 puts "----------------"
 pp GroundBuilder.new.map
+
