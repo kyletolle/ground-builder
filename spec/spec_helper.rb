@@ -1,11 +1,17 @@
-require 'rubygems'
-require 'rspec'
+require 'spork'
 
-def require_files
-  ruby_files = File.join(File.dirname(__FILE__), '..', 'lib', '**', '*.rb')
-  Dir[ruby_files].each do |file|
-    require file
-  end
+Spork.prefork do
+  require 'rubygems'
+  require 'rspec'
 end
 
-require_files
+Spork.each_run do
+  def require_files
+    ruby_files = File.join(File.dirname(__FILE__), '..', 'lib', '**', '*.rb')
+    Dir[ruby_files].each do |file|
+      require file
+    end
+  end
+
+  require_files
+end
