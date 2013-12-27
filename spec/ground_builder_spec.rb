@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe GroundBuilder do
-  let(:width) { 3 }
-  let(:height) { 4 }
+  let(:width) { 1 }
+  let(:height) { 1 }
 
   subject { described_class.new(width, height) }
 
