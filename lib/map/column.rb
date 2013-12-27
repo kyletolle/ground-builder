@@ -4,6 +4,8 @@ class Map
   class Column
     def initialize(width)
       @width = width
+
+      generate
     end
 
     def generate
@@ -12,6 +14,10 @@ class Map
           a << Point.new
         end
       end
+    end
+
+    def to_s
+      @array.map(&:to_s).join(" | ")
     end
   end
 end
