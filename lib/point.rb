@@ -6,11 +6,5 @@ class Point
   def initialize
     @affinities = Affinities.new
   end
-
-  def to_s
-    @affinities.map do |key, affinity|
-      affinity.to_s
-    end.join(";")
-  end
 end
 
