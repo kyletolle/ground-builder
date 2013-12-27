@@ -17,3 +17,4 @@ class Affinities
     end
   end
 end
+
