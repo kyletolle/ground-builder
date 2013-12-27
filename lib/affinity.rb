@@ -7,7 +7,7 @@ class Affinity
   end
 
   def to_s
-    "#{@element}: #{@weight}"
+    "#{@element.name}: #{@weight}"
   end
 end
 
