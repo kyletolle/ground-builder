@@ -4,8 +4,6 @@ class Map
   def initialize(width, height)
     @width = width
     @height = height
-
-    generate
   end
 
   def generate
