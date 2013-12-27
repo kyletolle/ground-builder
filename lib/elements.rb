@@ -15,6 +15,10 @@ class Elements
     end
   end
 
+  def self.all
+    ELEMENTS
+  end
+
 private
   ELEMENTS = [ Water, Soil, Stone ]
 end
