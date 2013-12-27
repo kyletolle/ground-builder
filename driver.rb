@@ -2,10 +2,11 @@ require 'pp'
 require_relative 'lib/ground_builder'
 
 puts "THE MAP"
-puts "----------------"
+puts "="*26
+puts 
 
 width = Ground::Sizes::X
 height = Ground::Sizes::Y
 
-pp GroundBuilder.new(width, height).map
+puts GroundBuilder.new(width, height).map.to_s
 
