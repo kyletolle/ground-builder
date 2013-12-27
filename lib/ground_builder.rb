@@ -14,11 +14,11 @@ class GroundBuilder
   end
 end
 
-puts "THE MAP"
-puts "----------------"
+# puts "THE MAP"
+# puts "----------------"
 
-width = Ground::Sizes::X
-height = Ground::Sizes::Y
+# width = Ground::Sizes::X
+# height = Ground::Sizes::Y
 
-pp GroundBuilder.new(width, height).map
+# pp GroundBuilder.new(width, height).map
 
