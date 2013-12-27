@@ -6,5 +6,11 @@ describe Elements::Soil do
       expect(described_class.name).to eq :soil
     end
   end
+
+  describe "#abbr" do
+    it "is So" do
+      expect(described_class.abbr).to eq "So"
+    end
+  end
 end
 
