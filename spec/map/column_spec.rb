@@ -6,7 +6,7 @@ describe Map::Column do
 
     it "has the right number of points" do
       column = Map::Column.new(width).generate
-      column.select{|col| col.class == Point}.count.should == width
+      expect(column.select{|col| col.class == Point}.count).to eq width
     end
   end
 end

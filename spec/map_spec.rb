@@ -5,9 +5,9 @@ describe Map do
     let(:width)  { 2 }
     let(:height) { 4 }
 
-    it "should have all the rows and columns given" do
+    it "has all the rows and columns given" do
       map = Map.new(width, height).generate
-      map.select{|row| row.count == width}.count.should == height
+      expect(map.select{|row| row.count == width}.count).to eq height
     end
   end
 end

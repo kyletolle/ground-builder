@@ -6,7 +6,8 @@ describe Map::Row do
   describe "#generate" do
     it "has all the columns" do
       row = Map::Row.new(width).generate
-      row.count.should == width
+      expect(row.count).to eq width
     end
   end
 end
+
