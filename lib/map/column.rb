@@ -4,8 +4,6 @@ class Map
   class Column
     def initialize(width)
       @width = width
-
-      generate
     end
 
     def generate
