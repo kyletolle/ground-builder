@@ -1,7 +1,7 @@
 module Ground
   module Sizes
-    X = 2
-    Y = 2
+    X = 4
+    Y = 4
   end
 end
 
