@@ -32,7 +32,7 @@ class Dropper
     end
 
     coordinates_of_bits_to_drop.each do |bit|
-      element_to_drop = Elements.all[rand(1...Elements.all.count)]
+      element_to_drop = Elements.all[rand(0...Elements.all.count)]
       @map.at(bit[0], bit[1]).drop(element_to_drop)
     end
   end
