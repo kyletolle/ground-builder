@@ -15,6 +15,14 @@ class Map
     def to_s
       "| #{@column.to_s} |"
     end
+
+    def [](index)
+      @column[index]
+    end
+
+    def each(&block)
+      @column.each(&block)
+    end
   end
 end
 
