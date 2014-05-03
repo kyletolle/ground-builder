@@ -1,17 +1,17 @@
-require_relative 'affinities'
+require_relative 'affinity'
 
 class Point
-  attr_reader :affinities
+  attr_reader :affinity
 
   def initialize
-    @affinities = Affinities.new
+    random_index = rand(0...Elements.all.count)
+    @affinity = Affinity.new(Elements.all[random_index], 1.0)
   end
 
   def to_s
-    @affinities.collect do |key, affinity|
-      formatted_weight = '%.2f' % affinity.weight
-      "#{affinity.element.abbr}:#{formatted_weight}"
-    end.join(";")
+    formatted_weight = '%.2f' % affinity.weight
+    "#{affinity.element.abbr}:#{formatted_weight}"
+  end
   end
 end
 
