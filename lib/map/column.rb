@@ -19,6 +19,14 @@ class Map
     def to_s
       @points.map(&:to_s).join(" | ")
     end
+
+    def[](index)
+      @points[index]
+    end
+
+    def each(&block)
+      @points.each(&block)
+    end
   end
 end
 
