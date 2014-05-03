@@ -10,7 +10,7 @@ class Point
 
   def to_s
     formatted_weight = '%.2f' % affinity.weight
-    "#{affinity.element.abbr}:#{formatted_weight}"
+    "#{affinity.element.abbr}:#{formatted_weight}".rjust(7, " ")
   end
   end
 end
