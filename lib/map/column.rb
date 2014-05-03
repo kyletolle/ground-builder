@@ -9,7 +9,7 @@ class Map
     end
 
     def generate
-      @array ||= [].tap do |a|
+      @points ||= [].tap do |a|
         @width.times do
           a << Point.new
         end
@@ -17,7 +17,7 @@ class Map
     end
 
     def to_s
-      @array.map(&:to_s).join(" | ")
+      @points.map(&:to_s).join(" | ")
     end
   end
 end
