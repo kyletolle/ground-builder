@@ -25,5 +25,9 @@ class Map
   def to_s
     @rows.each(&:to_s).join("\n")
   end
+
+  def at(row, column)
+    @rows[row][column]
+  end
 end
 
