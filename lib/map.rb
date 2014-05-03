@@ -29,5 +29,17 @@ class Map
   def at(row, column)
     @rows[row][column]
   end
+
+  def each(&block)
+    traverser = lambda do |obj|
+      if obj.respond_to?(:each)
+        obj.each(&traverser)
+      else
+        block.call obj
+      end
+    end
+
+    traverser.call(@rows)
+  end
 end
 
