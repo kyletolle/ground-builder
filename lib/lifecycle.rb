@@ -11,6 +11,14 @@ class Lifecycle
       @dropper.drop
       @settler.settle
     end
+
+    puts "We've dropped and settled all the points"
+
+    @map.each do |point|
+      puts "Point: #{point}"
+      puts "Bits: #{point.bits}"
+      puts
+    end
   end
 end
 
