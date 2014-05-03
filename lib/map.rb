@@ -1,6 +1,8 @@
 class Map
   require_relative 'map/row'
 
+  attr_reader :width, :height
+
   def initialize(width, height)
     @width = width
     @height = height
@@ -14,6 +16,10 @@ class Map
         a << Row.new(@width)
       end
     end
+  end
+
+  def count
+    @width * @height
   end
 
   def to_s
