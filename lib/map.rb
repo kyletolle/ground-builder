@@ -11,7 +11,7 @@ class Map
   end
 
   def generate
-    @array ||= [].tap do |a|
+    @rows ||= [].tap do |a|
       @height.times do
         a << Row.new(@width)
       end
@@ -23,7 +23,7 @@ class Map
   end
 
   def to_s
-    @array.each(&:to_s).join("\n")
+    @rows.each(&:to_s).join("\n")
   end
 end
 
