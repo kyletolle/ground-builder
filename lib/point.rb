@@ -17,5 +17,15 @@ class Point
   def drop(bit)
     @bits << bit
   end
+
+  def wants_to_shed_bits?
+    bits_to_shed.any?
+  end
+
+  def bits_to_shed
+    @bits.select do |bit|
+      bit.name != affinity.element.name
+    end
+  end
 end
 

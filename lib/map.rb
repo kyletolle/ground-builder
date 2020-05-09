@@ -41,5 +41,18 @@ class Map
 
     traverser.call(@rows)
   end
+
+  def random_neighbor_for(point)
+    row_index = nil
+
+    @rows.select.with_index do |row, index|
+      row_index = index if row.contains?(point)
+    end
+
+
+    points = self.select do |point|
+
+    end
+  end
 end
 

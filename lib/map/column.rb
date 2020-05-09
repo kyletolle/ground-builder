@@ -27,6 +27,10 @@ class Map
     def each(&block)
       @points.each(&block)
     end
+
+    def index(point)
+      @points.index(point)
+    end
   end
 end
 

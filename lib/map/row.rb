@@ -8,10 +8,6 @@ class Map
       generate
     end
 
-    def generate
-      @column ||= Column.new(@width)
-    end
-
     def to_s
       "| #{@column.to_s} |"
     end
@@ -22,6 +18,20 @@ class Map
 
     def each(&block)
       @column.each(&block)
+    end
+
+    def contains?(point)
+
+      return !!@column.index(point)
+    end
+
+    def column_for(point)
+
+    end
+
+  private
+    def generate
+      @column ||= Column.new(@width)
     end
   end
 end
